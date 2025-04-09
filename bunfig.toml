@@ -1,0 +1,11 @@
+[install]
+# Use the exact versions from the lockfile
+frozen = true
+
+[install.scopes]
+# Configure scopes for package installation
+"@next" = { registry = "https://registry.npmjs.org/" }
+
+[test]
+# Configure test settings
+coverage = true 

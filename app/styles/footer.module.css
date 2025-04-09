@@ -1,0 +1,193 @@
+.footer-container {
+  position: relative;
+  background: linear-gradient(to bottom, transparent, #000 20%);
+  padding: 3rem 0 2rem;
+  overflow: hidden;
+}
+
+.footer-content {
+  position: relative;
+  z-index: 10;
+}
+
+.footer-border {
+  position: relative;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 105, 180, 0.3), transparent);
+  margin: 2rem 0;
+  overflow: hidden;
+}
+
+.footer-border::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 105, 180, 0.8), transparent);
+  animation: shimmer 3s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+.footer-logo {
+  position: relative;
+  display: inline-block;
+  font-weight: bold;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  transition: all 0.3s ease;
+}
+
+.footer-logo:hover {
+  text-shadow: 0 0 15px rgba(255, 105, 180, 0.8);
+  color: #ff69b4;
+}
+
+.social-icons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.icon-wrapper {
+  position: relative;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.icon-wrapper::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: 50%;
+  padding: 1px;
+  background: linear-gradient(45deg, #ff69b4, #4f46e5);
+  -webkit-mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.icon-wrapper:hover {
+  transform: translateY(-5px);
+}
+
+.icon-wrapper:hover::before {
+  opacity: 1;
+}
+
+.footer-link {
+  position: relative;
+  color: rgba(255, 255, 255, 0.7);
+  transition: all 0.3s ease;
+  display: inline-block;
+  margin-right: 1rem;
+}
+
+.footer-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, #ff69b4, transparent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.footer-link:hover {
+  color: white;
+}
+
+.footer-link:hover::after {
+  transform: scaleX(1);
+}
+
+.sparkle {
+  position: absolute;
+  background: white;
+  border-radius: 50%;
+  z-index: 1;
+  opacity: 0;
+  animation: twinkle 5s infinite;
+}
+
+@keyframes twinkle {
+  0%, 100% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1);
+  }
+}
+
+.footer-form {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.footer-form:hover {
+  border-color: rgba(255, 105, 180, 0.5);
+  box-shadow: 0 0 15px rgba(255, 105, 180, 0.3);
+}
+
+.footer-input {
+  background: rgba(0, 0, 0, 0.3);
+  border: none;
+  color: white;
+  padding: 0.75rem;
+  width: 100%;
+  outline: none;
+}
+
+.subscribe-button {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(45deg, #ff69b4, #4f46e5);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 0.8rem;
+}
+
+.subscribe-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px -5px rgba(255, 105, 180, 0.4);
+}
+
+.flying-stars-container {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+} 
