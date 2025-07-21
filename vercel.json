@@ -1,5 +1,12 @@
 {
   "buildCommand": "bun run build",
+  "devCommand": "bun run dev",
   "installCommand": "bun install",
-  "framework": "nextjs"
+  "framework": "nextjs",
+  "outputDirectory": ".next",
+  "build": {
+    "env": {
+      "RESEND_API_KEY": "dummy_key_for_build"
+    }
+  }
 } 

@@ -1,11 +1,9 @@
 import React, { useRef, useState } from "react";
 import { motion } from "framer-motion";
+import type { NavigationItem } from "@/app/types";
 
 interface NavigationProps {
-  items: {
-    name: string;
-    id: string;
-  }[];
+  items: NavigationItem[];
 }
 
 const Navigation = ({ items }: NavigationProps) => {

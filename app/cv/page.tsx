@@ -9,7 +9,7 @@ import AnimatedText from '../components/AnimatedText'
 const CV = () => {
   const handleDownload = () => {
     const link = document.createElement('a')
-    link.href = '/images/CV.pdf'
+    link.href = '/images/Thai-CV.pdf'
     link.download = 'SrosThai_CV.pdf'
     document.body.appendChild(link)
     link.click()
@@ -24,7 +24,7 @@ const CV = () => {
         <div className="absolute inset-0 bg-gradient-to-br from-pink-500/10 to-purple-500/10" />
       </div>
 
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
@@ -32,22 +32,22 @@ const CV = () => {
       >
         {/* Header Section */}
         <div className="p-8 flex flex-col md:flex-row items-center gap-8 bg-gradient-to-r from-gray-900/50 to-gray-800/50 border-b border-white/10">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             className="relative w-40 h-40 rounded-full overflow-hidden border-4 border-pink-500/30 shadow-lg"
           >
             <Image
-              src="/images/me.jpg"
+              src="/images/sovannthai.jpg"
               alt="Profile"
               width={160}
               height={160}
-              className="object-cover w-full h-full"
+              className="object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
           </motion.div>
           <div className="flex-1 text-center md:text-left">
-            <motion.h1 
+            <motion.h1
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               className="text-5xl font-bold text-white mb-4"
@@ -57,7 +57,7 @@ const CV = () => {
                 className="inline-block"
               />
             </motion.h1>
-            <motion.h2 
+            <motion.h2
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
@@ -74,13 +74,13 @@ const CV = () => {
               transition={{ delay: 0.4 }}
               className="flex justify-center md:justify-start gap-4"
             >
-              <Button
+              {/* <Button
                 onClick={handleDownload}
                 className="bg-pink-500 hover:bg-pink-600 text-white shadow-lg hover:shadow-pink-500/50 transition-all duration-300"
               >
                 <Download className="mr-2 h-4 w-4" />
                 Download CV
-              </Button>
+              </Button> */}
             </motion.div>
           </div>
         </div>
@@ -95,10 +95,10 @@ const CV = () => {
               className="space-y-4"
             >
               <h3 className="text-2xl font-bold text-pink-400 border-b border-pink-400/30 pb-2">
-              <AnimatedText
-                text="Profile"
-                className="inline-block"
-              />
+                <AnimatedText
+                  text="Profile"
+                  className="inline-block"
+                />
               </h3>
               <p className="text-gray-300 leading-relaxed">
                 I am a Backend Laravel developer skilled in building complete applications,
@@ -114,10 +114,10 @@ const CV = () => {
               className="space-y-4"
             >
               <h3 className="text-2xl font-bold text-pink-400 border-b border-pink-400/30 pb-2">
-              <AnimatedText
-                text="Contact"
-                className="inline-block"
-              />
+                <AnimatedText
+                  text="Contact"
+                  className="inline-block"
+                />
               </h3>
               <div className="space-y-3">
                 <p className="flex items-center gap-3 text-gray-300">
@@ -140,18 +140,24 @@ const CV = () => {
               className="space-y-4"
             >
               <h3 className="text-2xl font-bold text-pink-400 border-b border-pink-400/30 pb-2">
-              <AnimatedText
-                text="Skills"
-                className="inline-block"
-              />
+                <AnimatedText
+                  text="Skills"
+                  className="inline-block"
+                />
               </h3>
               <ul className="space-y-3">
                 {[
                   'Proficient in PHP and Laravel framework',
                   'Database Management: MySQL, Knowledge of database migrations, seeding, and Eloquent ORM',
                   'Building RESTful APIs and GraphQL APIs for frontend consumption',
-                  'API authentication (e.g., OAuth, Passport, Sanctum)',
-                  'Authentication & Authorization: Implementing user authentication systems and role-based access controls'
+                  'PHP (Laravel 8/9/10/11/12), OOP, MVC Architecture',
+                  'Database Design: MySQL, PostgreSQL',
+                  'Eloquent ORM, Query Optimization, Indexing',
+                  'Authentication & Authorization (Sanctum, Passport, Spatie Roles & Permissions)',
+                  'Notification Systems (Email, Pusher, Telegram bot)',
+                  'Git, GitHub/GitLab, Version Control',
+                  'Deployment: DigitalOcean, Vercel, Surge',
+                  'Experience with RESTful API integration'
                 ].map((skill, index) => (
                   <motion.li
                     key={index}
@@ -175,10 +181,10 @@ const CV = () => {
               className="space-y-4"
             >
               <h3 className="text-2xl font-bold text-pink-400 border-b border-pink-400/30 pb-2">
-              <AnimatedText
-                text="Soft Skills"
-                className="inline-block"
-              />
+                <AnimatedText
+                  text="Soft Skills"
+                  className="inline-block"
+                />
               </h3>
               <ul className="space-y-3">
                 {[
@@ -209,10 +215,10 @@ const CV = () => {
               className="space-y-4"
             >
               <h3 className="text-2xl font-bold text-pink-400 border-b border-pink-400/30 pb-2">
-              <AnimatedText
-                text="Education"
-                className="inline-block"
-              />
+                <AnimatedText
+                  text="Education"
+                  className="inline-block"
+                />
               </h3>
               <div className="bg-white/5 p-4 rounded-lg border border-white/10">
                 <p className="text-pink-400 mb-2">(2022-2025)</p>
@@ -230,47 +236,21 @@ const CV = () => {
               className="space-y-4"
             >
               <h3 className="text-2xl font-bold text-pink-400 border-b border-pink-400/30 pb-2">
-              <AnimatedText
-                text="Experience"
-                className="inline-block"
-              />
+                <AnimatedText
+                  text="Experience"
+                  className="inline-block"
+                />
               </h3>
-              
-              {/* First Experience */}
-              <div className="bg-white/5 p-4 rounded-lg border border-white/10 mb-6">
-                <p className="text-pink-400 mb-2">(October-2022 - May-2023)</p>
-                <h4 className="font-bold text-white text-xl mb-1">eOcambo Technology</h4>
-                <p className="text-gray-400 italic mb-3">IT SUPPORT</p>
-                <ul className="space-y-2">
-                  {[
-                    'Hardware and Software Troubleshooting: Diagnosing and resolving issues with computers, printers, Installing, configuring, and updating software and operating systems',
-                    'Technical Documentation: Creating user manuals, FAQs, and guides for software and hardware use',
-                    'Remote Support Tools: Using tools like TeamViewer or AnyDesk for remote troubleshooting',
-                    'Help Desk Support: Providing first-line support via ticketing systems, phone, or email'
-                  ].map((item, index) => (
-                    <motion.li
-                      key={index}
-                      initial={{ opacity: 0, x: 20 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: 0.3 + index * 0.1 }}
-                      className="flex items-start gap-2 text-gray-300"
-                    >
-                      <span className="text-pink-400 mt-1">•</span>
-                      {item}
-                    </motion.li>
-                  ))}
-                </ul>
-              </div>
-
-              {/* Second Experience */}
+              {/* Experience */}
               <div className="bg-white/5 p-4 rounded-lg border border-white/10">
                 <p className="text-pink-400 mb-2">(July-2023 - Now)</p>
                 <h4 className="font-bold text-white text-xl mb-1">eOcambo Technology</h4>
                 <p className="text-gray-400 italic mb-3">Backend Laravel Developer</p>
                 <ul className="space-y-2">
                   {[
-                    'Laravel Developer I\'m developing web applications such as Driving Management Systems, POS, and Room Rental Management Systems using the Laravel Framework',
-                    'Experience with RESTful API integration'
+                    'Developed and maintained backend systems using Laravel',
+                    'Developed 1 complete application from scratch',
+                    'Implemented RESTful APIs for frontend consumption',
                   ].map((item, index) => (
                     <motion.li
                       key={index}
@@ -295,13 +275,13 @@ const CV = () => {
               className="space-y-4"
             >
               <h3 className="text-2xl font-bold text-pink-400 border-b border-pink-400/30 pb-2">
-              <AnimatedText
-                text="Salary"
-                className="inline-block"
-              />
+                <AnimatedText
+                  text="Salary"
+                  className="inline-block"
+                />
               </h3>
               <div className="bg-white/5 p-4 rounded-lg border border-white/10">
-                <p className="text-gray-300">Expected Salary: <span className="text-pink-400">$1 - $10000</span> per month/year</p>
+                <p className="text-gray-300">Expected Salary: <span className="text-pink-400">$350 - $450</span> per month/year</p>
               </div>
             </motion.section>
           </div>

@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
-import { cn } from "@/utils/cn";
+import { cn } from "@/app/lib/utils";
 
 export const BackgroundBeams = ({ className }: { className?: string }) => {
   const containerRef = useRef<HTMLDivElement>(null);

@@ -3,13 +3,17 @@
   overflow: hidden;
   position: relative;
   width: 100%;
+  -webkit-mask-image: -webkit-linear-gradient(left, transparent 0%, black 5%, black 95%, transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
 }
 
 .tech-scroll {
   display: flex;
   gap: 3rem;
-  animation: scroll 30s linear infinite;
+  animation: scroll 35s linear infinite;
   white-space: nowrap;
+  will-change: transform;
+  transform: translateZ(0);
 }
 
 .tech-scroll-container:hover .tech-scroll {
@@ -17,11 +21,33 @@
 }
 
 @keyframes scroll {
-  0% {
+  from {
     transform: translateX(0);
   }
-  100% {
-    transform: translateX(-50%);
+  to {
+    transform: translateX(calc(-50%));
+  }
+}
+
+.tech-scroll-reverse {
+  display: flex;
+  gap: 3rem;
+  animation: scroll-reverse 35s linear infinite;
+  white-space: nowrap;
+  will-change: transform;
+  transform: translateZ(0);
+}
+
+.tech-scroll-container:hover .tech-scroll-reverse {
+  animation-play-state: paused;
+}
+
+@keyframes scroll-reverse {
+  from {
+    transform: translateX(calc(-50%));
+  }
+  to {
+    transform: translateX(0);
   }
 }
 
